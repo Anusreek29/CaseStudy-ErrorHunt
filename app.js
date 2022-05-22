@@ -2,6 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser'); //Part#1 point2   Part#1 point1 in package.json line 5
 const path = require ('path'); 
 const cors = require('cors');
+const PORT = process.env.PORT || 5000
+const dotenv = require('dotenv')
+dotenv.config({path:__dirname+'/.env'});
 
 const nav= [
     {
@@ -56,7 +59,6 @@ app.get('/',function(req,res){
 
 
 
-
-app.listen(5000,()=>{
+app.listen(PORT,()=>{
     console.log("Server Ready on 5000"); //Part#1 point 5
 });
